@@ -4,6 +4,8 @@ let firstDayDegree = document.querySelector(".firstDayWeather .degree");
 let firstDayWeatherIcon = document.querySelector(
   ".firstDayWeather .weatherIcon"
 );
+let country = document.getElementById("country");
+let dir = document.getElementById("dir");
 let firstDayWind = document.querySelector(".firstDayWeather .wind");
 let firstDayWeatherTitle = document.querySelector(
   ".firstDayWeather .firstDayWeatherTitle"
@@ -50,15 +52,26 @@ async function getWeatherApi(city = "Kafr Ash Shaykh") {
 }
 getWeatherApi();
 function displayFirstDayWeather() {
+  var e = new Date(apiData.current.last_updated.replace(" ", "T"));
   firstDayWeatherTitle.innerHTML = `
-        <span>${days[date.getDay()]}</span>
-        <span>${date.getDate()} ${months[date.getMonth()]}</span>`;
+        <span>${days[e.getDay()]}</span>
+        <span>${e.getDate()} ${months[date.getMonth()]}</span>`;
   cityName.innerHTML = apiData.location.name;
+  country.innerHTML = apiData.location.country;
   firstDayDegree.innerHTML = apiData.current.temp_c + `<sup>o</sup>C`;
   firstDayWeatherIcon.src = `http:` + apiData.current.condition.icon;
   firstDayCondition.innerHTML = apiData.current.condition.text;
   firstDayWind.innerHTML =
     `<img src="img/icon-wind.png" class="me-1">` + apiData.current.wind_kph;
+  if (apiData.current.wind_dir == "W") {
+    dir.innerHTML = `<img src="img/icon-compass.png" class="me-1">` + "West";
+  } else if (apiData.current.wind_dir == "E") {
+    dir.innerHTML = `<img src="img/icon-compass.png" class="me-1">` + "East";
+  } else if (apiData.current.wind_dir == "N") {
+    dir.innerHTML = `<img src="img/icon-compass.png" class="me-1">` + "North";
+  } else {
+    dir.innerHTML = `<img src="img/icon-compass.png" class="me-1">` + "South";
+  }
 }
 function displayNextDaysWeather(dayNo) {
   let day = apiData.forecast.forecastday[dayNo].day;
