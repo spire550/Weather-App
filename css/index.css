@@ -1,0 +1,132 @@
+body {
+  font-family: Roboto, "Open Sans", sans-serif;
+}
+#searchCity {
+  background-color: #1e202b;
+}
+.nav-link {
+  padding: 0.1rem 1rem;
+  font-size: 14px;
+  border: none;
+  transition: color 0.5s, border-color 0.5s !important;
+}
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #009ad8 !important;
+  border: 2px solid #009ad8 !important;
+  background-color: transparent !important;
+  border-radius: 30px;
+}
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #009ad8;
+  border: 2px solid #009ad8 !important;
+  background-color: transparent !important;
+  border-radius: 30px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+.bg-light {
+  background-color: #1e202b !important;
+}
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-brand h5 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: white;
+}
+.navbar-brand p {
+  font-size: 10px;
+  font-weight: 300px;
+  color: #bfc1c8;
+  margin-bottom: 0;
+}
+
+.mainView {
+  background: url(../img/banner.png) left top no-repeat,
+    linear-gradient(#1e202b, #1e202b);
+}
+.forcast {
+  background-color: #323544;
+  border-radius: 10px;
+}
+.firstDayWeatherTitle,
+.thirdDayWeatherTitle,
+.secondDayWeatherTitle {
+  background-color: #2d303d;
+  padding: 5px 10px;
+}
+.firstDayWeatherTitle {
+  border-top-left-radius: 10px;
+}
+.thirdDayWeatherTitle {
+  border-top-right-radius: 10px;
+}
+
+.secondDayWeather {
+  background-color: #262936;
+}
+.secondDayWeatherTitle {
+  background-color: #222530;
+  padding: 5px 10px;
+}
+.degree {
+  font-weight: 700;
+  color: white;
+}
+.firstDayWeather .degree {
+  font-size: 90px;
+}
+.weatherIcon {
+  width: 80px;
+  height: 80px;
+}
+.condition {
+  color: #009ad8;
+}
+.form-control {
+  border-radius: 40px;
+  height: 55px;
+  background-color: #1e202b;
+  border: transparent 1px solid;
+  padding: 15px;
+}
+.myBtn {
+  background-color: #009ad8;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 35px;
+  position: absolute;
+
+  font-size: 14px;
+}
+.findBtn {
+  right: 20px;
+  top: 7px;
+}
+footer {
+  background-color: #262936;
+}
+.icons i {
+  color: #009ad8;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #1e202b;
+}
+.subBtn {
+  right: 20px;
+  bottom: 7px;
+}
+.text-gray {
+  color: #bfc1c8;
+}

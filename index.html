@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Weather-App</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-5">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img class="align-baseline" src="img/logo.png" />
+          <div class="d-inline-block ms-3">
+            <h5 class="fw-bold">Weather</h5>
+            <p>tagline goes here</p>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler bg-danger"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Live cameras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Photos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <div class="mainView text-gray p-5">
+        <div class="container position-relative pb-5">
+          <input
+            type="text"
+            placeholder="Find your location..."
+            id="searchCity"
+            class="form-control text-white"
+          />
+          <button class="myBtn findBtn">Find</button>
+        </div>
+        <div class="forcast container row m-auto g-0">
+          <div class="firstDayWeather col-lg-4">
+            <div
+              class="firstDayWeatherTitle d-flex justify-content-between"
+            ></div>
+            <div class="p-3">
+              <p id="cityName"></p>
+              <div class="d-flex align-items-center justify-content-around">
+                <p class="degree"></p>
+                <img class="weatherIcon" src="" />
+              </div>
+              <p class="condition"></p>
+              <span class="me-5"
+                ><img src="img/icon-umberella.png" class="me-1" />20%</span
+              >
+              <span class="me-5 wind"></span>
+              <span><img src="img/icon-compass.png" class="me-1" />East</span>
+            </div>
+          </div>
+
+          <div class="secondDayWeather text-center col-lg-4"></div>
+          <div class="thirdDayWeather text-center col-lg-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container py-5">
+        <div class="row pt-5 pb-3 justify-content-between">
+          <div class="position-relative col-lg-6">
+            <input
+              type="text"
+              placeholder="Enter your email to subscribe..."
+              id="subscribe"
+              class="form-control"
+            />
+            <button class="myBtn subBtn">Subscribe</button>
+          </div>
+          <div class="icons col-lg-5 text-center">
+            <a href="https://www.facebook.com/profile.php?id=100012470554852">
+              <i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="index.html"> <i class="fab fa-twitter"></i></a>
+            <a href="index.html"> <i class="fab fa-google-plus-g"></i></a>
+            <a href="index.html"> <i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+
+        <p class="text-gray">
+          Copyright 2014 Company name. Designed by Themezy. All rights reserved
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
