@@ -10,6 +10,7 @@ let firstDayWind = document.querySelector(".firstDayWeather .wind");
 let firstDayWeatherTitle = document.querySelector(
   ".firstDayWeather .firstDayWeatherTitle"
 );
+let rain = document.getElementById("rain");
 let secondDayWeather = document.querySelector(".secondDayWeather");
 let thirdDayWeather = document.querySelector(".thirdDayWeather");
 let searchCity = document.getElementById("searchCity");
@@ -61,6 +62,8 @@ function displayFirstDayWeather() {
   firstDayDegree.innerHTML = apiData.current.temp_c + `<sup>o</sup>C`;
   firstDayWeatherIcon.src = `http:` + apiData.current.condition.icon;
   firstDayCondition.innerHTML = apiData.current.condition.text;
+  rain.innerHTML = `  <img src="img/icon-umberella.png" class="me-1" >
+  ` +apiData.current.precip_mm+'%';
   firstDayWind.innerHTML =
     `<img src="img/icon-wind.png" class="me-1">` + apiData.current.wind_kph;
   if (apiData.current.wind_dir == "W") {
@@ -72,9 +75,11 @@ function displayFirstDayWeather() {
   } else {
     dir.innerHTML = `<img src="img/icon-compass.png" class="me-1">` + "South";
   }
+  ;
 }
 function displayNextDaysWeather(dayNo) {
   let day = apiData.forecast.forecastday[dayNo].day;
+  let day1 = apiData.forecast.forecastday[dayNo].astro;
   let whatToDisplay;
   let whatToDisplayClass;
   if (dayNo == 1) {
@@ -91,6 +96,7 @@ function displayNextDaysWeather(dayNo) {
       <h4 class="degree my-3 ">${day.maxtemp_c}<sup>o</sup>C</h4>
       <h5 class=" my-3">${day.mintemp_c}<sup>o</sup>C</h5>
       <p class="condition">${day.condition.text}</p>
+      <p class="condition">Sunrise at ${day1.sunrise}</p>
     </div>
     `;
 }
