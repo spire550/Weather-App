@@ -108,3 +108,17 @@ searchCity.addEventListener("keyup", function () {
 findBtn.addEventListener("click", function () {
   getWeatherApi(searchCity.value);
 });
+
+let x= document.querySelectorAll("nav .nav-item a");
+let test=document.getElementById("test")
+
+x.forEach(function(ele,index){
+  ele.addEventListener("click",function(e){
+   console.log(e.target);
+   if(!e.target==''){
+    test.classList.remove("active")
+   }
+   else{
+   ele.classList.add("active")}
+  })
+})
