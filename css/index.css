@@ -8,7 +8,7 @@ body {
   background-color: #1e202b;
 }
 .nav-link {
-  padding: 0.1rem 1rem;
+  padding: 0.2rem 1rem;
   font-size: 14px;
   border: none;
   transition: color 0.5s, border-color 0.5s !important;
