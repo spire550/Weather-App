@@ -54,6 +54,7 @@ async function getWeatherApi(city = "Kafr Ash Shaykh") {
 getWeatherApi();
 function displayFirstDayWeather() {
   var e = new Date(apiData.current.last_updated.replace(" ", "T"));
+
   firstDayWeatherTitle.innerHTML = `
         <span>${days[e.getDay()]}</span>
         <span>${e.getDate()} ${months[date.getMonth()]}</span>`;
@@ -62,8 +63,11 @@ function displayFirstDayWeather() {
   firstDayDegree.innerHTML = apiData.current.temp_c + `<sup>o</sup>C`;
   firstDayWeatherIcon.src = `http:` + apiData.current.condition.icon;
   firstDayCondition.innerHTML = apiData.current.condition.text;
-  rain.innerHTML = `  <img src="img/icon-umberella.png" class="me-1" >
-  ` +apiData.current.precip_mm+'%';
+  rain.innerHTML =
+    `  <img src="img/icon-umberella.png" class="me-1" >
+  ` +
+    apiData.current.precip_mm +
+    "%";
   firstDayWind.innerHTML =
     `<img src="img/icon-wind.png" class="me-1">` + apiData.current.wind_kph;
   if (apiData.current.wind_dir == "W") {
@@ -75,11 +79,16 @@ function displayFirstDayWeather() {
   } else {
     dir.innerHTML = `<img src="img/icon-compass.png" class="me-1">` + "South";
   }
-  ;
 }
 function displayNextDaysWeather(dayNo) {
   let day = apiData.forecast.forecastday[dayNo].day;
   let day1 = apiData.forecast.forecastday[dayNo].astro;
+  let day2 = [];
+  day2.push(apiData.forecast.forecastday[0].hour[9]);
+  day2.push(apiData.forecast.forecastday[0].hour[13]);
+  day2.push(apiData.forecast.forecastday[0].hour[21]);
+  day2.push(apiData.forecast.forecastday[0].hour[0]);
+
   let whatToDisplay;
   let whatToDisplayClass;
   if (dayNo == 1) {
@@ -97,6 +106,12 @@ function displayNextDaysWeather(dayNo) {
       <h5 class=" my-3">${day.mintemp_c}<sup>o</sup>C</h5>
       <p class="condition">${day.condition.text}</p>
       <p class="condition">Sunrise at ${day1.sunrise}</p>
+      <ul class="d-flex bg-danger border-1 rounded-3">
+      <li>At 9AM ${day2[0].temp_c}</li>
+      <li>At 1PM ${day2[1].temp_c}</li>
+      <li>At 9AM ${day2[2].temp_c}</li>
+      <li>At 12PM ${day2[3].temp_c}</li>
+    </ul>
     </div>
     `;
 }
@@ -109,16 +124,16 @@ findBtn.addEventListener("click", function () {
   getWeatherApi(searchCity.value);
 });
 
-let x= document.querySelectorAll("nav .nav-item a");
-let test=document.getElementById("test")
+let x = document.querySelectorAll("nav .nav-item");
+let test = document.getElementById("test");
 
-x.forEach(function(ele,index){
-  ele.addEventListener("click",function(e){
-   console.log(e.target);
-   if(!e.target==''){
-    test.classList.remove("active")
-   }
-   else{
-   ele.classList.add("active")}
-  })
-})
+x.forEach(function (ele, index) {
+  ele.addEventListener("click", function (e) {
+    console.log(e.target);
+    if (!e.target) {
+      test.classList.add("active");
+    } else {
+      test.classList.remove("active");
+    }
+  });
+});
