@@ -41,6 +41,8 @@ let days = [
   "Friday",
   "Saturday",
 ];
+alert("please open gps and agree to use your location or it will be Alexandria By Default:)) ");
+
 function getCoordintes() {
 	var options = {
 		enableHighAccuracy: true,
@@ -60,6 +62,8 @@ function getCoordintes() {
 
 	function error(err) {
 		console.warn(`ERROR(${err.code}): ${err.message}`);
+		    getWeatherApi("Alexandria");
+
 	}
 
 	navigator.geolocation.getCurrentPosition(success, error, options);
