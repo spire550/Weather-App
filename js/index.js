@@ -159,10 +159,10 @@ function displayNextDaysWeather(dayNo) {
       <h5 class=" my-3">${day.mintemp_c}<sup>o</sup>C</h5>
       <p class="condition">${day.condition.text}</p>
       <p class="condition">Sunrise at ${day1.sunrise}</p>
-      <ul class="d-flex bg-danger border-1 rounded-3">
+      <ul class="d-flex bg-danger border-1 rounded-3 justify-content-center">
       <li>At 9AM ${day2[0].temp_c}</li>
       <li>At 1PM ${day2[1].temp_c}</li>
-      <li>At 9AM ${day2[2].temp_c}</li>
+      <li>At 9AP ${day2[2].temp_c}</li>
       <li>At 12PM ${day2[3].temp_c}</li>
     </ul>
     </div>
